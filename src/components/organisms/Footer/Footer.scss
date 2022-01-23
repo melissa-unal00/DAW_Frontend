@@ -2,13 +2,16 @@
 @import "../../../styles/mixin";
 
 .footer {
+  //position: absolute;
   align-items: flex-start;
   background-color: map-get($colors, black);
   color: map-get($colors, white);
   display: flex;
   justify-content: space-evenly;
-  max-width: 100%;
-  max-height: 20rem;
+  width: 100%;
+  max-height: 10rem;
+  bottom: 0;
+  z-index: 10;
 
   &__contact {
     align-items: center;
