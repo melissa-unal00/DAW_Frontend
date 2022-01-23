@@ -5,7 +5,7 @@ type Props = {
   className?: string;
   value?: string;
   variant: "standard" | "filled" | "outlined" | undefined;
-  label: string;
+  label?: string;
   onChange?: any;
   type?: string;
   select?: boolean;

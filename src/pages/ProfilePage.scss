@@ -1,0 +1,76 @@
+@import "../styles/vars.scss";
+.profile-page {
+  //   &__image {
+  //     margin: 2rem 0rem 0rem 10rem;
+  //   }
+  //   &__field-name {
+  //     margin: 2rem 0rem 0rem 10rem;
+  //   }
+  //   &__field-box {
+  //     display: flex;
+  //     flex-direction: column;
+  //   }
+  &--center {
+    text-align: center;
+  }
+  &--flex-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: center;
+    column-gap: 15%;
+  }
+  &--flex-child {
+    // flex: 1;
+    // flex-direction: row;
+    // justify-content: center;
+  }
+  &__labels {
+    padding: 29px 12px 10px;
+  }
+  &__labels-box {
+    padding: 20px 12px 10px;
+  }
+  &--styling {
+    padding: 2rem 0rem 2rem 0rem;
+    border-radius: 7rem;
+    margin: 2rem 15rem 2rem 15rem;
+    background-color: map-get($colors, grayShade2);
+  }
+  &__button {
+    padding-top: 1rem;
+    text-align: center;
+  }
+}
+.height {
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+.MuiInputBase-input {
+  padding: 0;
+}
+
+.MuiInputBase-root {
+  font-family: map-get($fonts, Montserrat);
+  height: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.image {
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+}
+
+.image-none {
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  visibility: hidden;
+}
+
+.test {
+  font-size: 1rem;
+}

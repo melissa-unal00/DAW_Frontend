@@ -18,6 +18,7 @@ import HomePage from "../pages/HomePage";
 import SignupPage from "../pages/SignupPage";
 import SigninPage from "../pages/SigninPage";
 import ProductsPage from "../pages/ProductsPage";
+import ProfilePage from "../pages/ProfilePage";
 
 export {
   Footer,
@@ -33,4 +34,5 @@ export {
   Signin,
   SigninPage,
   ProductsPage,
+  ProfilePage,
 };
