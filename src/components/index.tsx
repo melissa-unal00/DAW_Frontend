@@ -6,12 +6,15 @@ import Image from "./atoms/Image/Image";
 
 //molecules
 import NavbarComp from "./molecules/NavbarComp/NavbarComp";
+import Signup from "./molecules/Signup/Signup";
+
 //organisms
 import Header from "./organisms/Header/Header";
 import Footer from "./organisms/Footer/Footer";
-//pages
 
+//pages
 import HomePage from "../pages/HomePage";
+import SignupPage from "../pages/SignupPage";
 
 export {
   Footer,
@@ -22,4 +25,6 @@ export {
   Image,
   HomePage,
   NavbarComp,
+  Signup,
+  SignupPage,
 };

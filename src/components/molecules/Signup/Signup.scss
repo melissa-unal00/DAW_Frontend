@@ -1,0 +1,11 @@
+.formfield {
+  text-align: center;
+}
+.signup {
+  &__width {
+    width: 5rem;
+  }
+  &__margin {
+    margin: 1rem;
+  }
+}
