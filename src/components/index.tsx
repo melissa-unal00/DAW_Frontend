@@ -8,6 +8,7 @@ import Image from "./atoms/Image/Image";
 import NavbarComp from "./molecules/NavbarComp/NavbarComp";
 import Signup from "./molecules/Signup/Signup";
 import Signin from "./molecules/Signin/Signin";
+import CarouselComp from "./molecules/CarouselComp/CarouselComp";
 
 //organisms
 import Header from "./organisms/Header/Header";
@@ -35,4 +36,5 @@ export {
   SigninPage,
   ProductsPage,
   ProfilePage,
+  CarouselComp,
 };
