@@ -1,7 +1,12 @@
 import React from "react";
 import { useCookies } from "react-cookie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { SignupPage, SigninPage, HomePage } from "../src/components/index";
+import {
+  SignupPage,
+  SigninPage,
+  HomePage,
+  ProductsPage,
+} from "../src/components/index";
 import { UserContext } from "./context/UserContext";
 
 function App() {
@@ -27,6 +32,7 @@ function App() {
             <Route path="/home" component={HomePage}></Route>
             <Route path="/register" component={SignupPage}></Route>
             <Route path="/login" component={SigninPage}></Route>
+            <Route path="/products" component={ProductsPage}></Route>
           </Switch>
         </Router>
       </UserContext.Provider>

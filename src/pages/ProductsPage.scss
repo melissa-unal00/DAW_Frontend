@@ -1,0 +1,12 @@
+.products-page__product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 5%;
+}
+
+.products-page__category {
+  width: 10rem;
+}

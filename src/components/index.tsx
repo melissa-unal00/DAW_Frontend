@@ -17,6 +17,7 @@ import Footer from "./organisms/Footer/Footer";
 import HomePage from "../pages/HomePage";
 import SignupPage from "../pages/SignupPage";
 import SigninPage from "../pages/SigninPage";
+import ProductsPage from "../pages/ProductsPage";
 
 export {
   Footer,
@@ -31,4 +32,5 @@ export {
   SignupPage,
   Signin,
   SigninPage,
+  ProductsPage,
 };
