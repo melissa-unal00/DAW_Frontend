@@ -1,0 +1,106 @@
+//@import "../../atoms/Button/Button.scss";
+@import "../../../styles/vars.scss";
+@import "../../../styles/mixin.scss";
+.navbar__fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar {
+  overflow: hidden;
+  background-color: map-get($colors, black);
+  opacity: 0.9;
+  .navbar__blog {
+    float: right;
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: map-get($colors, white);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    &:hover {
+      @include button-bg(map-get($colors, black));
+      color: map-get($colors, orangeShade1);
+    }
+  }
+  .navbar__logo {
+    margin-left: 10px;
+    float: left;
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+  }
+  .navbar__submenu {
+    float: right;
+    overflow: hidden;
+    .navbar__submenu-content {
+      padding-top: 6px;
+      display: none;
+      position: absolute;
+      background-color: map-get($colors, black);
+      min-width: 150px;
+      right: 0px;
+      z-index: 1;
+      .navbar__submenu-content-a {
+        float: none;
+        color: map-get($colors, white);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        padding-left: 35px;
+        &:hover {
+          @include button-bg(map-get($colors, black));
+        }
+      }
+    }
+  }
+
+  .navbar__submenu {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: map-get($colors, black);
+    background-color: inherit;
+    font-family: "Montserrat";
+    margin: 0;
+    cursor: pointer;
+  }
+}
+.navbar__submenu-arrow {
+  float: left;
+  color: map-get($colors, white);
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+.navbar__user-name {
+  float: right;
+  color: white;
+  font-family: "Montserrat";
+  padding-top: 15px;
+  margin-right: 10px;
+}
+.navbar__user-photo {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-top: 15px;
+  color: map-get($colors, white);
+}
+
+.navbar__user-name {
+  float: right;
+  padding-top: 15px;
+}
+
+.navbar__logo {
+  height: 30px;
+  width: 150px;
+}
+
+.navbar__submenu:hover .navbar__submenu-content {
+  display: block;
+}

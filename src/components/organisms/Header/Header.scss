@@ -1,0 +1,22 @@
+.header {
+  &__background-image {
+    background-image: url("../../../assets/images/background1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__buttons-flex {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+  }
+  &__link {
+    text-decoration: none;
+  }
+}
