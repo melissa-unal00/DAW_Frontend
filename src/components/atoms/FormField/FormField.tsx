@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
 import { TextField, MenuItem } from "@material-ui/core";
+import data from "../../../assets/translations/translations.json";
+
 type Props = {
   children?: ReactNode;
   className?: string;
@@ -12,7 +14,9 @@ type Props = {
   required?: boolean;
 };
 const genders = ["Male", "Female", "Other"];
-const categories = ["All", "Eyes", "Skin", "Lips"];
+//const categories = ["All", "Eyes", "Skin", "Lips"];
+const categoriesEN = [data.en.all, data.en.eyes, data.en.skin, data.en.lips];
+const categoriesRO = [data.ro.all, data.ro.eyes, data.ro.skin, data.ro.lips];
 
 const generateYears = () => {
   let years = [];
@@ -72,28 +76,30 @@ const FormField = ({
       select={select}
       required={required}
     >
-      {select && label === "Gender"
+      {(select && label === data.ro.gender) ||
+      (select && label === data.en.gender)
         ? genders.map((option: any) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))
         : null}
-      {select && label === "Day"
+      {(select && label === data.ro.day) || (select && label === data.en.day)
         ? days.map((option: any) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))
         : null}
-      {select && label === "Month"
+      {(select && label === data.ro.month) ||
+      (select && label === data.en.month)
         ? months.map((option: any) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))
         : null}
-      {select && label === "Year"
+      {(select && label === data.ro.year) || (select && label === data.en.year)
         ? years.map((option: any) => (
             <MenuItem key={option} value={option}>
               {option}
@@ -101,13 +107,17 @@ const FormField = ({
           ))
         : null}
 
-      {select && label === "Category"
-        ? categories.map((option: any) => (
+      {select && label == data.en.category
+        ? categoriesEN.map((option: any) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))
-        : null}
+        : categoriesRO.map((option: any) => (
+            <MenuItem key={option} value={option}>
+              {option}
+            </MenuItem>
+          ))}
     </TextField>
   );
 };

@@ -5,12 +5,15 @@ import { ButtonComp, FormField } from "../../index";
 import { useCookies } from "react-cookie";
 import { useContext } from "react";
 import "./Signin.scss";
+import { TranslationsContext } from "../../../context/TranslationsContext";
+import data from "../../../assets/translations/translations.json";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   //const [cookies, setCookie] = useCookies(["username"]);
+  let translationsContextData = useContext(TranslationsContext);
 
   const history = useHistory();
 
@@ -39,36 +42,69 @@ const Signin = () => {
 
   return (
     <div>
-      <form
-        onSubmit={handleSubmit}
-        className="formfield"
-        action="https://localhost:44336/api/User/authenticate"
-        method="POST"
-      >
-        <div className="signin__margin">
-          <FormField
-            variant="standard"
-            label="Username"
-            type="text"
-            value={username}
-            onChange={(e: any) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="signin__margin">
-          <FormField
-            variant="standard"
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e: any) => setPassword(e.target.value)}
-          />
-        </div>
-        <ButtonComp type="submit" variant="contained">
-          Submit
-        </ButtonComp>
-        <h2>Don't have an account? Sign up </h2>{" "}
-        <NavLink to="/register">Here</NavLink>
-      </form>
+      {translationsContextData.isTextChanged ? (
+        <form
+          onSubmit={handleSubmit}
+          className="formfield"
+          action="https://localhost:44336/api/User/authenticate"
+          method="POST"
+        >
+          <div className="signin__margin">
+            <FormField
+              variant="standard"
+              label={data.ro.username}
+              type="text"
+              value={username}
+              onChange={(e: any) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="signin__margin">
+            <FormField
+              variant="standard"
+              label={data.ro.password}
+              type="password"
+              value={password}
+              onChange={(e: any) => setPassword(e.target.value)}
+            />
+          </div>
+          <ButtonComp type="submit" variant="contained">
+            {data.ro.submit}
+          </ButtonComp>
+          <h2>{data.ro.donthaveanaccount}</h2>{" "}
+          <NavLink to="/register">{data.ro.here}</NavLink>
+        </form>
+      ) : (
+        <form
+          onSubmit={handleSubmit}
+          className="formfield"
+          action="https://localhost:44336/api/User/authenticate"
+          method="POST"
+        >
+          <div className="signin__margin">
+            <FormField
+              variant="standard"
+              label={data.en.username}
+              type="text"
+              value={username}
+              onChange={(e: any) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="signin__margin">
+            <FormField
+              variant="standard"
+              label={data.en.password}
+              type="password"
+              value={password}
+              onChange={(e: any) => setPassword(e.target.value)}
+            />
+          </div>
+          <ButtonComp type="submit" variant="contained">
+            {data.en.submit}
+          </ButtonComp>
+          <h2>{data.en.donthaveanaccount}</h2>{" "}
+          <NavLink to="/register">{data.en.here}</NavLink>
+        </form>
+      )}
     </div>
   );
 };

@@ -21,6 +21,9 @@ import SigninPage from "../pages/SigninPage";
 import ProductsPage from "../pages/ProductsPage";
 import ProfilePage from "../pages/ProfilePage";
 
+//hooks
+import useToggle from "../hooks/useToggle";
+
 export {
   Footer,
   FormField,
@@ -37,4 +40,5 @@ export {
   ProductsPage,
   ProfilePage,
   CarouselComp,
+  useToggle,
 };

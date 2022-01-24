@@ -1,10 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Header, NavbarComp, Footer, FormField } from "../components/index";
 import Product from "../components/molecules/Product/Product";
 import "./ProductsPage.scss";
+import { TranslationsContext } from "../context/TranslationsContext";
+import dataTranslations from "../assets/translations/translations.json";
 
 const ProductsPage = () => {
+  let translationsContextData = useContext(TranslationsContext);
+
   const [data, setData] = useState<[]>([]);
   const fetchData = () => {
     axios
@@ -93,7 +97,17 @@ const ProductsPage = () => {
   };
   const productItemsLips = generateProductListLips(data);
 
-  const [selectedOption, setSelectedOption] = useState("All");
+  const checkInitialState = () => {
+    let initialState;
+    translationsContextData.isTextChanged
+      ? (initialState = dataTranslations.ro.all)
+      : (initialState = dataTranslations.en.all);
+    return initialState;
+  };
+  let initialState = checkInitialState();
+  console.log(initialState);
+
+  const [selectedOption, setSelectedOption] = useState(initialState);
 
   return (
     <div>
@@ -103,26 +117,34 @@ const ProductsPage = () => {
       <div className="products-page__category">
         <FormField
           variant="standard"
-          label="Category"
+          label={
+            translationsContextData.isTextChanged
+              ? `${dataTranslations.ro.category}`
+              : `${dataTranslations.en.category}`
+          }
           type="text"
           select
           value={selectedOption}
           onChange={(e: any) => setSelectedOption(e.target.value)}
         />
       </div>
-      {selectedOption === "All" ? (
+      {selectedOption === dataTranslations.ro.all ||
+      selectedOption === dataTranslations.en.all ? (
         <div className="products-page__product">{productItemsAll}</div>
       ) : null}
 
-      {selectedOption === "Eyes" ? (
+      {selectedOption === dataTranslations.ro.eyes ||
+      selectedOption === dataTranslations.en.eyes ? (
         <div className="products-page__product">{productItemsEyes}</div>
       ) : null}
 
-      {selectedOption === "Skin" ? (
+      {selectedOption === dataTranslations.ro.skin ||
+      selectedOption === dataTranslations.en.skin ? (
         <div className="products-page__product">{productItemsSkin}</div>
       ) : null}
 
-      {selectedOption === "Lips" ? (
+      {selectedOption === dataTranslations.ro.lips ||
+      selectedOption === dataTranslations.en.lips ? (
         <div className="products-page__product">{productItemsLips}</div>
       ) : null}
 

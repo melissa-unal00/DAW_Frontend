@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import { CookiesProvider, useCookies } from "react-cookie";
-import { Signin, Header, NavbarComp, Footer } from "../components/index";
+import {
+  Signin,
+  Header,
+  NavbarComp,
+  Footer,
+  useToggle,
+} from "../components/index";
 
 const SigninPage = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+
   useEffect(() => {
     removeCookie("token");
   }, []);
