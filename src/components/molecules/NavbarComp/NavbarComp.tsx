@@ -58,7 +58,8 @@ const NavbarComp = () => {
             </NavLink>
             <button
               onClick={translationsContextData.setIsTextChanged}
-              style={{ paddingLeft: "30px" }}
+              style={{ paddingLeft: "1rem" }}
+              className="header__button-language"
             >
               <ReactCountryFlag
                 countryCode="US"
@@ -80,6 +81,7 @@ const NavbarComp = () => {
             </NavLink>
             <button
               onClick={translationsContextData.setIsTextChanged}
+              style={{ paddingLeft: "1rem" }}
               className="header__button-language"
             >
               <ReactCountryFlag
@@ -126,6 +128,7 @@ const NavbarComp = () => {
           <button
             onClick={translationsContextData.setIsTextChanged}
             className="header__button-language"
+            style={{ paddingLeft: "1rem" }}
           >
             <ReactCountryFlag
               countryCode="RO"
@@ -148,6 +151,7 @@ const NavbarComp = () => {
           <button
             onClick={translationsContextData.setIsTextChanged}
             className="header__button-language"
+            style={{ paddingLeft: "1rem" }}
           >
             <ReactCountryFlag
               countryCode="RO"

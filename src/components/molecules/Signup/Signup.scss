@@ -1,3 +1,13 @@
+@import "../../../styles/vars.scss";
+.signin__form {
+  &--styling {
+    padding: 5rem 0rem 5xrem 0rem;
+    border-radius: 7rem;
+    margin: 2rem 15rem 2rem 15rem;
+    background-color: map-get($colors, grayShade2);
+  }
+}
+
 .formfield {
   text-align: center;
 }

@@ -41,7 +41,7 @@ const Signin = () => {
   };
 
   return (
-    <div>
+    <div className="signin__form--styling">
       {translationsContextData.isTextChanged ? (
         <form
           onSubmit={handleSubmit}
@@ -101,8 +101,11 @@ const Signin = () => {
           <ButtonComp type="submit" variant="contained">
             {data.en.submit}
           </ButtonComp>
-          <h2>{data.en.donthaveanaccount}</h2>{" "}
-          <NavLink to="/register">{data.en.here}</NavLink>
+          <br />
+          <h3>
+            {data.en.donthaveanaccount}{" "}
+            <NavLink to="/register">{data.en.here}</NavLink>
+          </h3>{" "}
         </form>
       )}
     </div>

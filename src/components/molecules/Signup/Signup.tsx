@@ -69,7 +69,7 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="signin__form--styling">
       {translationsContextData.isTextChanged ? (
         <form
           onSubmit={handleSubmit}

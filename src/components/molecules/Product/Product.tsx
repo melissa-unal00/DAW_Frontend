@@ -12,6 +12,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import { StylesProvider } from "@material-ui/core/styles";
+import { TranslationsContext } from "../../../context/TranslationsContext";
+import dataTranslations from "../../../assets/translations/translations.json";
 
 interface Props {
   title: string;
@@ -20,6 +22,8 @@ interface Props {
   price: string;
 }
 const Product = ({ title, description, image, price }: Props) => {
+  let translationsContextData = React.useContext(TranslationsContext);
+
   return (
     <div className="product">
       <Card>
@@ -40,10 +44,14 @@ const Product = ({ title, description, image, price }: Props) => {
         </CardContent>
         <CardActions>
           <Button size="small" color="primary">
-            See more
+            {translationsContextData.isTextChanged
+              ? dataTranslations.ro.seemore
+              : dataTranslations.en.seemore}
           </Button>
           <Button size="small" color="primary">
-            Add to cart
+            {translationsContextData.isTextChanged
+              ? dataTranslations.ro.addtocart
+              : dataTranslations.en.addtocart}
           </Button>
         </CardActions>
       </Card>

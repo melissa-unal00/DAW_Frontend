@@ -19,11 +19,13 @@ const CarouselComp = () => {
     },
   ];
   return (
-    <Carousel className="carousel">
-      {items.map((item, i) => (
-        <Image src={item.no} className="carousel"></Image>
-      ))}
-    </Carousel>
+    <div className="carousel__box">
+      <Carousel>
+        {items.map((item, i) => (
+          <Image src={item.no} className="carousel"></Image>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 

@@ -30,7 +30,9 @@
       "all": "All",
       "eyes": "Eyes",
       "skin": "Skin",
-      "lips": "Lips"
+      "lips": "Lips",
+      "seemore": "See more",
+      "addtocart": "Add to cart"
     },
 
     "ro":{
@@ -63,7 +65,9 @@
       "all": "Toate",
       "eyes": "Ochi",
       "skin": "Ten",
-      "lips": "Buze"
+      "lips": "Buze",
+      "seemore": "Vezi mai mult",
+      "addtocart": "Adauga in cos"
 
     }
 }
