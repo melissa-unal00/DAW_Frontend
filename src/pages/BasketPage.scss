@@ -1,0 +1,27 @@
+.basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__product {
+    border-style: solid;
+    border-radius: 3rem;
+    width: 50rem;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  &__product-image {
+    float: left;
+    width: 10rem;
+    height: 10rem;
+  }
+  &__product-title {
+    padding-top: 10rem;
+    font-size: 1.2rem;
+  }
+  &__product-price {
+    font-size: 1.2rem;
+  }
+  &__product-description {
+    color: rgb(150, 150, 150);
+  }
+}

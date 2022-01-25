@@ -20,6 +20,7 @@ import SignupPage from "../pages/SignupPage";
 import SigninPage from "../pages/SigninPage";
 import ProductsPage from "../pages/ProductsPage";
 import ProfilePage from "../pages/ProfilePage";
+import BasketPage from "../pages/BasketPage";
 
 //hooks
 import useToggle from "../hooks/useToggle";
@@ -41,4 +42,5 @@ export {
   ProfilePage,
   CarouselComp,
   useToggle,
+  BasketPage,
 };

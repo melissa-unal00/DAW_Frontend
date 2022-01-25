@@ -105,9 +105,11 @@ const ProductsPage = () => {
     return initialState;
   };
   let initialState = checkInitialState();
-  console.log(initialState);
 
   const [selectedOption, setSelectedOption] = useState(initialState);
+  useEffect(() => {
+    console.log("!!!!!!!!!!!!!!!!!", selectedOption);
+  }, [selectedOption]);
 
   return (
     <div>
@@ -124,8 +126,15 @@ const ProductsPage = () => {
           }
           type="text"
           select
-          value={selectedOption}
-          onChange={(e: any) => setSelectedOption(e.target.value)}
+          value={
+            translationsContextData.isTextChanged
+              ? dataTranslations.ro.all
+              : dataTranslations.en.all
+          }
+          onChange={(e: any) => {
+            setSelectedOption(e.target.value);
+            console.log("????????", e);
+          }}
         />
       </div>
       {selectedOption === dataTranslations.ro.all ||

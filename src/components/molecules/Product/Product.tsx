@@ -9,11 +9,12 @@ import Typography from "@material-ui/core/Typography";
 import { DefaultDeserializer } from "v8";
 import "./Product.scss";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Grid } from "@material-ui/core";
 import { StylesProvider } from "@material-ui/core/styles";
 import { TranslationsContext } from "../../../context/TranslationsContext";
 import dataTranslations from "../../../assets/translations/translations.json";
+import { BasketContext } from "../../../context/BasketContext";
 
 interface Props {
   title: string;
@@ -22,7 +23,13 @@ interface Props {
   price: string;
 }
 const Product = ({ title, description, image, price }: Props) => {
-  let translationsContextData = React.useContext(TranslationsContext);
+  let translationsContextData = useContext(TranslationsContext);
+  let basketContextData = useContext(BasketContext);
+
+  const handleAddToCart = () => {
+    basketContextData.push({ title, image, price, description });
+    //console.log("BASKET CONTEXT ", basketContextData);
+  };
 
   return (
     <div className="product">
@@ -48,7 +55,7 @@ const Product = ({ title, description, image, price }: Props) => {
               ? dataTranslations.ro.seemore
               : dataTranslations.en.seemore}
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={handleAddToCart}>
             {translationsContextData.isTextChanged
               ? dataTranslations.ro.addtocart
               : dataTranslations.en.addtocart}

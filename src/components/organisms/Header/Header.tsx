@@ -4,7 +4,6 @@ import { ButtonComp, useToggle } from "../..";
 import { TranslationsContext } from "../../../context/TranslationsContext";
 import "./Header.scss";
 import data from "../../../assets/translations/translations.json";
-import ReactCountryFlag from "react-country-flag";
 
 const Header = () => {
   let translationsContextData = useContext(TranslationsContext);
@@ -25,9 +24,9 @@ const Header = () => {
             </ButtonComp>
           </NavLink>
 
-          <NavLink to="/cart" className="header__link">
+          <NavLink to="/basket" className="header__link">
             <ButtonComp type="button" variant="contained">
-              {data.ro.cart}
+              {data.ro.basket}
             </ButtonComp>
           </NavLink>
         </div>
@@ -45,9 +44,9 @@ const Header = () => {
             </ButtonComp>
           </NavLink>
 
-          <NavLink to="/cart" className="header__link">
+          <NavLink to="/basket" className="header__link">
             <ButtonComp type="button" variant="contained">
-              {data.en.cart}
+              {data.en.basket}
             </ButtonComp>
           </NavLink>
         </div>
