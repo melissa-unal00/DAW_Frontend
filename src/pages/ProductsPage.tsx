@@ -108,7 +108,6 @@ const ProductsPage = () => {
 
   const [selectedOption, setSelectedOption] = useState(initialState);
   useEffect(() => {
-    console.log("!!!!!!!!!!!!!!!!!", selectedOption);
   }, [selectedOption]);
 
   return (
@@ -133,7 +132,6 @@ const ProductsPage = () => {
           }
           onChange={(e: any) => {
             setSelectedOption(e.target.value);
-            console.log("????????", e);
           }}
         />
       </div>

@@ -1,13 +1,16 @@
+@import "../styles/vars.scss";
 .basket {
   display: flex;
   justify-content: center;
   align-items: center;
   &__product {
     border-style: solid;
+    border-color: map-get($colors, darkGray);
     border-radius: 3rem;
     width: 50rem;
     margin: 1rem;
     padding: 1rem;
+    box-shadow: 0.1rem 0.3rem #bfbfbf;
   }
   &__product-image {
     float: left;
@@ -22,6 +25,6 @@
     font-size: 1.2rem;
   }
   &__product-description {
-    color: rgb(150, 150, 150);
+    color: map-get($colors, lightGray);
   }
 }

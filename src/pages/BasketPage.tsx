@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
-import { Footer, Header, Image, NavbarComp } from "../components";
+import { ButtonComp, Footer, Header, Image, NavbarComp } from "../components";
 import { BasketContext } from "../context/BasketContext";
 import "./BasketPage.scss";
+import { BsTrashFill } from "react-icons/bs";
 
 const BasketPage = () => {
   let basketContextData = useContext(BasketContext);
+
+  // const handleDeleteProduct = (index: any) => {
+  //   basketContextData.splice(index, 1);
+  // };
   return (
     <div>
       <NavbarComp />
@@ -30,6 +35,9 @@ const BasketPage = () => {
                 <span className="basket__product-description">
                   {value.description}
                 </span>
+                <ButtonComp onClick={handleDeleteProduct}>
+                  <BsTrashFill></BsTrashFill>
+                </ButtonComp>
               </div>
             </div>
           );

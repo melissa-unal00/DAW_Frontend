@@ -27,8 +27,24 @@ const Product = ({ title, description, image, price }: Props) => {
   let basketContextData = useContext(BasketContext);
 
   const handleAddToCart = () => {
-    basketContextData.push({ title, image, price, description });
-    //console.log("BASKET CONTEXT ", basketContextData);
+    let selectedProduct = { title, image, price, description };
+    basketContextData.push(selectedProduct);
+    console.log("BASKET CONTEXT", basketContextData);
+  };
+
+  const removeDuplicates = () => {
+    handleAddToCart();
+
+    var valueArr = basketContextData.map(function (value: any) {
+      return value.title;
+    });
+    var isDuplicate = valueArr.some(function (value: any, idx: number) {
+      return valueArr.indexOf(value) != idx;
+    });
+
+    if (isDuplicate) {
+      basketContextData.pop();
+    }
   };
 
   return (
@@ -55,7 +71,7 @@ const Product = ({ title, description, image, price }: Props) => {
               ? dataTranslations.ro.seemore
               : dataTranslations.en.seemore}
           </Button>
-          <Button size="small" color="primary" onClick={handleAddToCart}>
+          <Button size="small" color="primary" onClick={removeDuplicates}>
             {translationsContextData.isTextChanged
               ? dataTranslations.ro.addtocart
               : dataTranslations.en.addtocart}

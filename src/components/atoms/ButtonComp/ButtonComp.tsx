@@ -6,7 +6,7 @@ import "./ButtonComp.scss";
 interface Props {
   children?: React.ReactNode;
   className?: string;
-  onClick?(...args: any): void;
+  onClick?: any;
   variant?: "text" | "outlined" | "contained";
   type?: "button" | "submit" | "reset" | undefined;
   icon?: boolean;
