@@ -108,17 +108,21 @@ const FormField = ({
           ))
         : null}
 
-      {select && label == data.en.category
-        ? categoriesEN.map((option: any) => (
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>
-          ))
-        : categoriesRO.map((option: any) => (
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>
-          ))}
+      {select &&
+        label == data.en.category &&
+        categoriesEN.map((option: any) => (
+          <MenuItem key={option} value={option}>
+            {option}
+          </MenuItem>
+        ))}
+
+      {select &&
+        label == data.ro.category &&
+        categoriesRO.map((option: any) => (
+          <MenuItem key={option} value={option}>
+            {option}
+          </MenuItem>
+        ))}
     </TextField>
   );
 };

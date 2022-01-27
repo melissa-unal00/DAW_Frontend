@@ -169,6 +169,8 @@ const Signup = () => {
             value={year}
             onChange={handleYear}
           />
+          <br />
+          <br />
 
           <div className="signup__margin">
             <ButtonComp type="submit" variant="contained">

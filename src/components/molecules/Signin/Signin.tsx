@@ -67,11 +67,15 @@ const Signin = () => {
               onChange={(e: any) => setPassword(e.target.value)}
             />
           </div>
+          <br />
           <ButtonComp type="submit" variant="contained">
             {data.ro.submit}
           </ButtonComp>
-          <h2>{data.ro.donthaveanaccount}</h2>{" "}
-          <NavLink to="/register">{data.ro.here}</NavLink>
+          <br />
+          <h2>
+            {data.ro.donthaveanaccount}{" "}
+            <NavLink to="/register">{data.ro.here}</NavLink>
+          </h2>
         </form>
       ) : (
         <form
