@@ -9,7 +9,7 @@ type Props = {
   value?: string;
   variant: "standard" | "filled" | "outlined" | undefined;
   label?: string;
-  onChange?: any;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   type?: string;
   select?: boolean;
   required?: boolean;
@@ -79,14 +79,14 @@ const FormField = ({
     >
       {(select && label === data.ro.gender) ||
       (select && label === data.en.gender)
-        ? genders.map((option: any) => (
+        ? genders.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))
         : null}
       {(select && label === data.ro.day) || (select && label === data.en.day)
-        ? days.map((option: any) => (
+        ? days.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
@@ -94,14 +94,14 @@ const FormField = ({
         : null}
       {(select && label === data.ro.month) ||
       (select && label === data.en.month)
-        ? months.map((option: any) => (
+        ? months.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
           ))
         : null}
       {(select && label === data.ro.year) || (select && label === data.en.year)
-        ? years.map((option: any) => (
+        ? years.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>
@@ -110,7 +110,7 @@ const FormField = ({
 
       {select &&
         label == data.en.category &&
-        categoriesEN.map((option: any) => (
+        categoriesEN.map((option) => (
           <MenuItem key={option} value={option}>
             {option}
           </MenuItem>
@@ -118,7 +118,7 @@ const FormField = ({
 
       {select &&
         label == data.ro.category &&
-        categoriesRO.map((option: any) => (
+        categoriesRO.map((option) => (
           <MenuItem key={option} value={option}>
             {option}
           </MenuItem>

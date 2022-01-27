@@ -24,22 +24,28 @@ const Signup = () => {
 
   const history = useHistory();
 
-  const handleDay = (e: any) => {
+  const handleDay = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setDay(e.target.value);
     setBirthday(`${year}-${month}-${e.target.value}`);
   };
 
-  const handleMonth = (e: any) => {
+  const handleMonth = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setMonth(e.target.value);
     setBirthday(`${year}-${e.target.value}-${day}`);
   };
 
-  const handleYear = (e: any) => {
+  const handleYear = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setYear(e.target.value);
     setBirthday(`${e.target.value}-${month}-${day}`);
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const user = {
       lastName,
@@ -84,7 +90,7 @@ const Signup = () => {
               type="text"
               value={firstName}
               required
-              onChange={(e: any) => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -94,7 +100,7 @@ const Signup = () => {
               type="text"
               value={lastName}
               required
-              onChange={(e: any) => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -104,7 +110,7 @@ const Signup = () => {
               type="text"
               value={email}
               required
-              onChange={(e: any) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -114,7 +120,7 @@ const Signup = () => {
               type="text"
               value={username}
               required
-              onChange={(e: any) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -124,7 +130,7 @@ const Signup = () => {
               type="password"
               value={password}
               required
-              onChange={(e: any) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -136,7 +142,7 @@ const Signup = () => {
               select
               required
               value={gender}
-              onChange={(e: any) => setGender(e.target.value)}
+              onChange={(e) => setGender(e.target.value)}
             />
           </div>
           <FormField
@@ -192,7 +198,7 @@ const Signup = () => {
               type="text"
               value={firstName}
               required
-              onChange={(e: any) => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -202,7 +208,7 @@ const Signup = () => {
               type="text"
               value={lastName}
               required
-              onChange={(e: any) => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -212,7 +218,7 @@ const Signup = () => {
               type="text"
               value={email}
               required
-              onChange={(e: any) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -222,7 +228,7 @@ const Signup = () => {
               type="text"
               value={username}
               required
-              onChange={(e: any) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -232,7 +238,7 @@ const Signup = () => {
               type="password"
               value={password}
               required
-              onChange={(e: any) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="signup__margin">
@@ -244,7 +250,7 @@ const Signup = () => {
               select
               required
               value={gender}
-              onChange={(e: any) => setGender(e.target.value)}
+              onChange={(e) => setGender(e.target.value)}
             />
           </div>
           <FormField

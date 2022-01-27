@@ -35,7 +35,7 @@ const Product = ({ title, description, image, price }: Props) => {
   const removeDuplicates = () => {
     handleAddToCart();
 
-    var valueArr = basketContextData.map(function (value: any) {
+    var valueArr = basketContextData.map(function (value: { title: string }) {
       return value.title;
     });
     var isDuplicate = valueArr.some(function (value: any, idx: number) {

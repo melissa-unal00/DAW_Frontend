@@ -17,14 +17,14 @@ const Signin = () => {
 
   const history = useHistory();
 
-  const routeChange = (e: any) => {
+  const routeChange = (e: { preventDefault: () => void }) => {
     //e.preventDefault();
     let path = `home`;
     history.push(path);
     window.location.reload();
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const user = { username, password };
     await axios
@@ -55,7 +55,7 @@ const Signin = () => {
               label={data.ro.username}
               type="text"
               value={username}
-              onChange={(e: any) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="signin__margin">
@@ -64,7 +64,7 @@ const Signin = () => {
               label={data.ro.password}
               type="password"
               value={password}
-              onChange={(e: any) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <br />
@@ -90,7 +90,7 @@ const Signin = () => {
               label={data.en.username}
               type="text"
               value={username}
-              onChange={(e: any) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="signin__margin">
@@ -99,7 +99,7 @@ const Signin = () => {
               label={data.en.password}
               type="password"
               value={password}
-              onChange={(e: any) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <br />

@@ -24,10 +24,10 @@ const ProfilePage = () => {
 
   const [userData, setUserData] = useState<any>();
 
-  const fetchUserData = (userId: any) => {
+  const fetchUserData = (userId: string) => {
     axios
       .get(`https://localhost:44336/api/User/byId?Id=${userId}`)
-      .then((res: any) => {
+      .then((res) => {
         setUserData(res.data);
         console.log(userData);
       });

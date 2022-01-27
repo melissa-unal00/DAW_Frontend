@@ -107,7 +107,6 @@ const ProductsPage = () => {
   let initialState = checkInitialState();
 
   const [selectedOption, setSelectedOption] = useState(initialState);
-  useEffect(() => {}, [selectedOption]);
 
   return (
     <div>
@@ -124,12 +123,8 @@ const ProductsPage = () => {
           }
           type="text"
           select
-          value={
-            translationsContextData.isTextChanged
-              ? dataTranslations.ro.all
-              : dataTranslations.en.all
-          }
-          onChange={(e: any) => {
+          value={selectedOption}
+          onChange={(e) => {
             setSelectedOption(e.target.value);
           }}
         />
