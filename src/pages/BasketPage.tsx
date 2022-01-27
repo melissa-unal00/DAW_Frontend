@@ -35,7 +35,9 @@ const BasketPage = () => {
                 <span className="basket__product-description">
                   {value.description}
                 </span>
-                <ButtonComp onClick={handleDeleteProduct}>
+                <br />
+                <br />
+                <ButtonComp>
                   <BsTrashFill></BsTrashFill>
                 </ButtonComp>
               </div>

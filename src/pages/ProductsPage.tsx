@@ -107,8 +107,7 @@ const ProductsPage = () => {
   let initialState = checkInitialState();
 
   const [selectedOption, setSelectedOption] = useState(initialState);
-  useEffect(() => {
-  }, [selectedOption]);
+  useEffect(() => {}, [selectedOption]);
 
   return (
     <div>
